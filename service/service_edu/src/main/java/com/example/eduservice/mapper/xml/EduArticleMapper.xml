@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.eduservice.mapper.EduArticleMapper">
+    <select id="getBaseArticleInfo" resultType="com.example.eduservice.entity.frontvo.ArticleWebVo">
+        SELECT ea.id,ea.member_name AS memberName,ea.title,ea.content,ea.state,ea.member_id AS memberId,ea.cate_id AS cateId,
+               ea.comment_count AS commentCount, ea.like_count AS likeCount,ea.view_count AS viewCount,
+               ea.gmt_create AS gmtCreate, ea.gmt_modified AS gmtModified,
+               ec.name AS cate,um.avatar
+        FROM edu_article ea
+                 LEFT OUTER JOIN edu_categories ec ON ea.cate_id=ec.id
+                 LEFT OUTER JOIN ucenter_member um ON ea.member_id=um.id
+        WHERE ea.id = #{articleId}
+    </select>
+</mapper>

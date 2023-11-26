@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.eduservice.mapper.EduCategoriesMapper">
+    <!--sql语句，根据课程id查询课程确认信息-->
+    <select id="getCategoriesInfoList" resultType="com.example.eduservice.entity.vo.CategoriesInfo">
+        SELECT ec.id,ec.name,ec.description, ec.sort,ec.gmt_create AS gmtCreate,ec.gmt_modified AS gmtModified,
+               (select count(cate_id) from edu_article WHERE edu_article.cate_id= ec.id) as articleCount
+        FROM edu_categories ec
+    </select>
+</mapper>
