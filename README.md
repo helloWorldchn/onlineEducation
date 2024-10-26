@@ -1,13 +1,6 @@
 # Getting Started
+### 谷粒学院_后端
 
-### Reference Documentation
-
-For further reference, please consider the following sections:
-
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.7.12/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.7.12/maven-plugin/reference/html/#build-image)
-* 
 ### start the redis on linux:
 cd /opt/module/redis-5.0.8/
 
